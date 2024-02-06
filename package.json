@@ -8,7 +8,8 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "lint:eslint": "eslint \"src/**/*.{vue,ts,js}\" --fix",
-    "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\""
+    "lint:prettier": "prettier --write \"**/*.{js,ts,json,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint  \"**/*.{css,scss,vue,html}\" --fix"
   },
   "dependencies": {
     "vue": "^3.3.11"
@@ -20,7 +21,16 @@
     "@vitejs/plugin-vue": "^4.6.2",
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.21.1",
+    "postcss": "^8.4.34",
+    "postcss-html": "^1.6.0",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.2.5",
+    "stylelint": "^16.2.1",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recess-order": "^4.4.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.0",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
