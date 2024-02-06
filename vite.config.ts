@@ -1,7 +1,19 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import path from "path";
+import { UserConfig, ConfigEnv, loadEnv } from "vite";
+import vue from "@vitejs/plugin-vue";
+const pathSrc = path.resolve(__dirname, "src")
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [vue()],
-})
+export default ({mode}: ConfigEnv): UserConfig => {
+  const env = loadEnv(mode, process.cwd())
+  return{
+    // 别名路径
+    resolve: {
+      alias: {
+        "@": pathSrc
+      }
+    },
+    plugins: [
+      vue()
+    ]
+  }
+}
