@@ -1,13 +1,13 @@
 import path from "path";
-import { UserConfig, ConfigEnv, loadEnv } from "vite";
+import { UserConfig} from "vite";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 
 const pathSrc = path.resolve(__dirname, "src")
 
-export default ({mode}: ConfigEnv): UserConfig => {
-  const env = loadEnv(mode, process.cwd())
+export default (): UserConfig => {
+  // const env = loadEnv(mode, process.cwd())
   return{
     // 别名路径
     resolve: {
