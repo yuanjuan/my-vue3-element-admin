@@ -5,8 +5,8 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
-declare module 'vue' {
+declare module "vue" {
   export interface GlobalComponents {
-    HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
+    HelloWorld: (typeof import("./../components/HelloWorld.vue"))["default"];
   }
 }
