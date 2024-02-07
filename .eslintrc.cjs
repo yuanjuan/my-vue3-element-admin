@@ -29,5 +29,6 @@ module.exports = {
   plugins: ["@typescript-eslint", "vue"],
   rules: {
     "vue/multi-word-component-names": 0, //关闭驼峰命名规则
+    "@typescript-eslint/no-explicit-any": ["off"], // 关闭any类型的警告
   },
 };
