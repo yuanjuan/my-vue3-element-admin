@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import variables from "@/styles/variables.module.scss";
+import { useCounterStore } from "@/store/counter";
+
+const counterStore = useCounterStore();
 
 defineProps<{ msg: string }>();
-
-const count = ref(0);
 </script>
 
 <template>
   <h1 class="text-red">{{ msg }}</h1>
   <div class="card box">
-    <button type="button" @click="count++">count is {{ count }}</button>
+    <el-form>
+      <el-form-item label="数字">{{ counterStore.count }}</el-form-item>
+      <el-form-item label="加倍">{{ counterStore.double }}</el-form-item>
+    </el-form>
   </div>
   <div>
     <el-button type="success"><i-ep-SuccessFilled />Success</el-button>
