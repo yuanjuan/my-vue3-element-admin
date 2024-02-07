@@ -1,5 +1,5 @@
 import path from "path";
-import { UserConfig } from "vite";
+import { UserConfig, ConfigEnv, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
@@ -11,8 +11,8 @@ import UnoCSS from "unocss/vite";
 
 const pathSrc = path.resolve(__dirname, "src");
 
-export default (): UserConfig => {
-  // const env = loadEnv(mode, process.cwd())
+export default ({ mode }: ConfigEnv): UserConfig => {
+  const env = loadEnv(mode, process.cwd());
   return {
     // 别名路径
     resolve: {
@@ -71,6 +71,23 @@ export default (): UserConfig => {
         scss: {
           javascriptEnabled: true,
           additionalData: `@use "@/styles/variables.scss" as *;`,
+        },
+      },
+    },
+    server: {
+      // 允许IP访问
+      host: "0.0.0.0",
+      // 应用端口 (默认:3000)
+      port: Number(env.VITE_APP_PORT),
+      // 运行是否自动打开浏览器
+      open: true,
+      // 反向代理解决跨域问题
+      proxy: {
+        [env.VITE_APP_BASE_API]: {
+          // 线上接口地址
+          target: "http://vapi.youlai.tech",
+          changeOrigin: true,
+          rewrite: (path) => path.replace(new RegExp("^" + env.VITE_APP_BASE_API), ""),
         },
       },
     },
