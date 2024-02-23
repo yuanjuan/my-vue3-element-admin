@@ -31,7 +31,7 @@ export const useUserStore = defineStore("user", () => {
     login,
   };
 });
-// 非setup
+// 非setup 导出一个自定义钩子函数
 export function useUserStoreHook() {
   return useUserStore(store);
 }
