@@ -1,6 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Logo from "./Logo.vue";
+</script>
 <template>
-  <div class="menu-wrap">侧边栏菜单</div>
+  <div class="menu-wrap">
+    <logo></logo>
+  </div>
 </template>
 <style lang="scss" scoped>
 .menu-wrap {
