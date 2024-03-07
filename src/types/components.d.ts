@@ -12,6 +12,7 @@ declare module "vue" {
     ElForm: (typeof import("element-plus/es"))["ElForm"];
     ElFormItem: (typeof import("element-plus/es"))["ElFormItem"];
     ElInput: (typeof import("element-plus/es"))["ElInput"];
+    ElScrollbar: (typeof import("element-plus/es"))["ElScrollbar"];
     HelloWorld: (typeof import("./../components/HelloWorld.vue"))["default"];
     IEpInfoFilled: (typeof import("~icons/ep/info-filled"))["default"];
     IEpSuccessFilled: (typeof import("~icons/ep/success-filled"))["default"];
